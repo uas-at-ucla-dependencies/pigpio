@@ -47,7 +47,7 @@ For more information, please refer to <http://unlicense.org/>
 #include <errno.h>
 #include <time.h>
 #include <sys/ioctl.h>
-#include <limits.h>
+#include <linux/limits.h>
 #include <pthread.h>
 #include <sys/time.h>
 #include <sys/mman.h>
