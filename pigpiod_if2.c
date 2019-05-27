@@ -590,35 +590,35 @@ static int recvMax(int pi, void *buf, int bufsize, int sent)
 
 /* PUBLIC ----------------------------------------------------------------- */
 
-double time_time(void)
-{
-   struct timeval tv;
-   double t;
+////////double time_time(void)
+////////{
+////////   struct timeval tv;
+////////   double t;
 
-   gettimeofday(&tv, 0);
+////////   gettimeofday(&tv, 0);
 
-   t = (double)tv.tv_sec + ((double)tv.tv_usec / 1E6);
+////////   t = (double)tv.tv_sec + ((double)tv.tv_usec / 1E6);
 
-   return t;
-}
+////////   return t;
+////////}
 
-void time_sleep(double seconds)
-{
-   struct timespec ts, rem;
+////////void time_sleep(double seconds)
+////////{
+////////   struct timespec ts, rem;
 
-   if (seconds > 0.0)
-   {
-      ts.tv_sec = seconds;
-      ts.tv_nsec = (seconds-(double)ts.tv_sec) * 1E9;
+////////   if (seconds > 0.0)
+////////   {
+////////      ts.tv_sec = seconds;
+////////      ts.tv_nsec = (seconds-(double)ts.tv_sec) * 1E9;
 
-      while (clock_nanosleep(CLOCK_REALTIME, 0, &ts, &rem))
-      {
-         /* copy remaining time to ts */
-         ts.tv_sec  = rem.tv_sec;
-         ts.tv_nsec = rem.tv_nsec;
-      }
-   }
-}
+////////      while (clock_nanosleep(CLOCK_REALTIME, 0, &ts, &rem))
+////////      {
+////////	 /* copy remaining time to ts */
+////////	 ts.tv_sec  = rem.tv_sec;
+////////	 ts.tv_nsec = rem.tv_nsec;
+////////      }
+////////   }
+////////}
 
 char *pigpio_error(int errnum)
 {
